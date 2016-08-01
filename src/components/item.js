@@ -3,9 +3,6 @@ import React, { PropTypes } from 'react'
 const Item = ({ add_onClick, delete_onClick, name, day }) => (
   <li
     onClick={onClick}
-    style={{
-      textDecoration: completed ? 'line-through' : 'none'
-    }}
   >
     {text}
   </li>

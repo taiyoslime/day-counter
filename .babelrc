@@ -1,6 +1,8 @@
 {
   "presets": ["es2015", "react"],
   "plugins": [
-    "babel-plugin-syntax-jsx"
+    "syntax-jsx",
+	"add-module-exports",
+	"syntax-flow"
   ]
 }
