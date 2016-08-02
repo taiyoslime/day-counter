@@ -1,22 +1,22 @@
-import React, {Componet,PropTypes} from 'react'
-import Header from './Header'
-import Items from './Items'
+import React, {Component,PropTypes} from 'react'
+//import Header from './Header'
+import Item from './Item'
 
 import styles from './stylesheets/Main.css';
 import module from 'react-css-modules';
 
-class Main extends Componet {
-    constructor(props, context) {
-        super(props, context)
-    }
+class Main extends Component {
+	constructor(props, context) {
+    	super(props, context)
+  }
 
     render() {
         const { item, actions } = this.props;
-
 		return (
 			<div>
-				<Header />
-				<Items />
+				<ul>
+					{item.map(el => <Item item={el} {...actions} />)}_
+				</ul>
 			</div>
 		)
     }

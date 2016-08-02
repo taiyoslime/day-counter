@@ -1,6 +1,10 @@
 import * as ACTION from '../constants/ActionTypes'
 
-const initialState = [{}]
+const initialState = [{
+	id:5,
+	name:"hoahoa",
+	day:5
+}]
 
 export default function todos(state = initialState, action) {
     switch (action.type) {

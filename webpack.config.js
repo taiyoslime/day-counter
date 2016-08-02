@@ -23,8 +23,8 @@ module.exports = {
         }, {
             test: /\.css$/,
             loaders: [
-				//'style?sourceMap',
-				'style!css?modules&importLoaders=1&localIdentName=[path]__[name]__[local]__[hash:base64:5]'
+				'style?sourceMap',
+				'css?modules&importLoaders=1&localIdentName=[path]__[name]__[local]__[hash:base64:5]'
 			]
         }]
     },
