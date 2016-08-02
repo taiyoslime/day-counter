@@ -61,7 +61,7 @@
 
 	var _reactRedux = __webpack_require__(176);
 
-	var _App = __webpack_require__(199);
+	var _App = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./containers/App\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _App2 = _interopRequireDefault(_App);
 
@@ -23020,18 +23020,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 199 */
-/***/ function(module, exports) {
-
-	import React, { Component, PropTypes } from 'react'
-	import { bindActionCreators } from 'redux'
-	import { connect } from 'react-redux'
-	import * as TodoActions from '../actions'
-
-	// import **** from '../components/****'
-
-
-/***/ },
+/* 199 */,
 /* 200 */
 /***/ function(module, exports) {
 

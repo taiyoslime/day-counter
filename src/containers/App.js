@@ -5,6 +5,19 @@ import * as actions from '../actions'
 
 // import **** from '../components/****'
 
+class App extends Component {
+  render() {
+    const { item, actions } = this.props;
+    return (
+      <div>
+	 	
+      </div>
+    )
+  }
+}
+
+
+
 function mapStateToProps(state) {
   return {
     item: state.item,
@@ -18,4 +31,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(/**********/);
+)(App);

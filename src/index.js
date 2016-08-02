@@ -8,12 +8,11 @@ import App from './containers/App'
 import configureStore from './store/configureStore'
 
 
-const store = configureStore()
+const store = configureStore();
 
 render(
   <Provider store={store}>
     <App />
-	hogehogehogehogeho
   </Provider>,
   document.getElementById('root-container')
 )

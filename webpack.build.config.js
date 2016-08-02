@@ -14,8 +14,7 @@ module.exports = {
     ],
     module: {
         loaders: [{
-            test: /\.(js|jsx)$/,
-            include: PATH.ENTRY,
+            test: /\.js$/,
             exclude: PATH.NODE_MODULES,
             loader: 'babel'
         }, {

@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const PORT = 8080;
+const PORT = 3000;
 
 const PATH = {
     ENTRY: path.join(__dirname, 'src', 'index.js'),
@@ -17,8 +17,7 @@ module.exports = {
     ],
     module: {
         loaders: [{
-            test: /\.(js|jsx)$/,
-            include: PATH.ENTRY,
+            test: /\.js$/,
             exclude: PATH.NODE_MODULES,
             loader: 'react-hot!babel'
         }, {
