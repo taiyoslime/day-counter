@@ -23,7 +23,10 @@ module.exports = {
             loader: 'react-hot!babel'
         }, {
             test: /\.css$/,
-            loader: 'style!css?modules&importLoaders=1&localIdentName=[path]__[name]__[local]__[hash:base64:5]'
+            loaders: [
+				//'style?sourceMap',
+				'style!css?modules&importLoaders=1&localIdentName=[path]__[name]__[local]__[hash:base64:5]'
+			]
         }]
     },
     resolve: {

@@ -18,7 +18,7 @@ export default function todos(state = initialState, action) {
                 e.id !== action.id
             )
 
-        case EDIT_TODO:
+        case ACTION.MODIFY_ITEM:
             return state.map(e =>
                 e.id === action.id ?
                 Object.assign({}, e, {
