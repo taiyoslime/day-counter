@@ -65,7 +65,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _configureStore = __webpack_require__(202);
+	var _configureStore = __webpack_require__(200);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -23021,174 +23021,30 @@
 
 /***/ },
 /* 199 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';
+	import React, { Component, PropTypes } from 'react'
+	import { bindActionCreators } from 'redux'
+	import { connect } from 'react-redux'
+	import * as TodoActions from '../actions'
 
-	var _react = __webpack_require__(2);
+	// import **** from '../components/****'
 
-	var _react2 = _interopRequireDefault(_react);
-
-	var _redux = __webpack_require__(183);
-
-	var _reactRedux = __webpack_require__(176);
-
-	var _actions = __webpack_require__(200);
-
-	var TodoActions = _interopRequireWildcard(_actions);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
 /* 200 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.addItem = addItem;
-	exports.modifyItem = modifyItem;
-	exports.deleteItem = deleteItem;
-
-	var _ActionTypes = __webpack_require__(201);
-
-	var ACTION = _interopRequireWildcard(_ActionTypes);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function addItem(name, day) {
-		return { type: ACTION.ADD_ITEM, name: name, day: day };
-	}
-
-	function modifyItem(id, name, day) {
-		return { type: ACTION.MODIFY_ITEM, id: id, name: name, day: day };
-	}
-
-	function deleteItem(id) {
-		return { type: ACTION.DELETE_ITEM, id: id };
-	}
-
-/***/ },
-/* 201 */
 /***/ function(module, exports) {
 
-	"use strict";
+	import { createStore } from 'redux'
+	import rootReducer from '../reducers'
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var ADD_ITEM = exports.ADD_ITEM = "ADD_ITEM";
-	var MODIFY_ITEM = exports.MODIFY_ITEM = "MODIFY_ITEM";
-	var DELETE_ITEM = exports.DELETE_ITEM = "DELETE_ITEM";
 
-/***/ },
-/* 202 */
-/***/ function(module, exports, __webpack_require__) {
+	export default function configureStore(preloadedState) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = configureStore;
-
-	var _redux = __webpack_require__(183);
-
-	var _reducers = __webpack_require__(203);
-
-	var _reducers2 = _interopRequireDefault(_reducers);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function configureStore(preloadedState) {
-
-	  var store = (0, _redux.createStore)(_reducers2.default, preloadedState);
+	  const store = createStore(rootReducer, preloadedState);
 	  return store;
 	}
-	module.exports = exports['default'];
 
-/***/ },
-/* 203 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _redux = __webpack_require__(183);
-
-	var _item = __webpack_require__(204);
-
-	var _item2 = _interopRequireDefault(_item);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var rootReducer = (0, _redux.combineReducers)({
-		item: _item2.default
-	});
-
-	exports.default = rootReducer;
-	module.exports = exports['default'];
-
-/***/ },
-/* 204 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = todos;
-
-	var _ActionTypes = __webpack_require__(201);
-
-	var ACTION = _interopRequireWildcard(_ActionTypes);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-	var initialState = [{}];
-
-	function todos() {
-	    var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
-	    var action = arguments[1];
-
-	    switch (action.type) {
-	        case ACTION.ADD_ITEM:
-	            return [{
-	                id: state.reduce(function (maxId, todo) {
-	                    return Math.max(todo.id, maxId);
-	                }, -1) + 1,
-	                name: action.name,
-	                day: action.day
-	            }].concat(_toConsumableArray(state));
-
-	        case ACTION.DELETE_ITEM:
-	            return state.filter(function (e) {
-	                return e.id !== action.id;
-	            });
-
-	        case EDIT_TODO:
-	            return state.map(function (e) {
-	                return e.id === action.id ? Object.assign({}, e, {
-	                    name: action.name,
-	                    day: action.day
-	                }) : e;
-	            });
-
-	        default:
-	            return state;
-	    }
-	}
-	module.exports = exports['default'];
 
 /***/ }
 /******/ ]);

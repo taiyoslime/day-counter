@@ -4,5 +4,12 @@
     "syntax-jsx",
 	"add-module-exports",
 	"syntax-flow"
-  ]
+	],
+  "env": {
+    "development": {
+      "presets": [
+        "power-assert"
+      ]
+    }
+  }
 }
