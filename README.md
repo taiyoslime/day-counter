@@ -12,7 +12,7 @@ $ npm install
 
 # Usage
 
-To develop, `$ npm run start` and then access `localhost:${PORT}`.
+To develop, `$ npm start` and then access `localhost:${PORT}`.
 Default PORT is set to `3000`.
 
 Other commnads:
