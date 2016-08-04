@@ -1,0 +1,17 @@
+machine:
+  timezone: Asia/Tokyo
+  node:
+    version: 5
+dependencies:
+  pre:
+    - npm install
+  cache_directories:
+    - node_modules
+test:
+  override:
+    - npm run test:ci
+    - npm run build
+general:
+  branches:
+    ignore:
+      # list of branches to ignore

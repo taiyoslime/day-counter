@@ -15,7 +15,7 @@ Default PORT is set to `3000`.
 
 Other commnads:
 ```
-$ npm run test
+$ npm test
 $ npm run test:watch
 $ npm run lint
 $ npm run typecheck
