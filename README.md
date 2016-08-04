@@ -1,3 +1,5 @@
+Circle CI status :[![CircleCI](https://circleci.com/gh/taiyoslime/day-counter.svg?style=svg)](https://circleci.com/gh/taiyoslime/day-counter)
+
 Study for modern Front-End Web development
 
 # Install
