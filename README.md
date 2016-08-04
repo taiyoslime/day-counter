@@ -1,4 +1,4 @@
-Study for modern Front-End Web developmentor
+Study for modern Front-End Web development
 
 # Install
 
