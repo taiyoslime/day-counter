@@ -1,5 +1,6 @@
-# Install
+Study for modern Front-End Web developmentor
 
+# Install
 
 ```
 $ brew install flow # or other way to install flowtype
